@@ -1,0 +1,1814 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package classlar;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.util.ArrayList;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTable;
+import javax.swing.border.MatteBorder;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+
+/**
+ *
+ * @author asimk
+ */
+class HeaderColor extends DefaultTableCellRenderer {
+
+    public HeaderColor() {
+        setOpaque(true);
+    }
+
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean selected, boolean focused, int row, int column) {
+        super.getTableCellRendererComponent(table, value, selected, focused, row, column);
+
+        setBackground(new java.awt.Color(27, 36, 66));
+        setForeground(new Color(255, 255, 255));
+        setFont(new Font("Segoe UI", Font.BOLD, 13));
+//you can change the color that u want 
+        return this;
+    }
+
+}
+
+public class mainCalisan extends javax.swing.JFrame {
+
+    /**
+     * Creates new form mainCalisan
+     */
+    public void cikisYap(Kullanici k1){
+        k1.cikisYapMesaj();
+        Login l1 = new Login();
+        l1.setVisible(true);
+        this.dispose();
+    }
+    Calisan c1;
+    public void guncelle(){
+        DefaultTableModel m = (DefaultTableModel) tblHesap.getModel();
+            m.setRowCount(0);
+            System.out.println(c1.hesapListele().size());
+            try {
+                ArrayList<Object[]> hesaplar2 = c1.hesapListele();
+                for (int i = 0; i < hesaplar2.size(); i++) {
+                    m.addRow(hesaplar2.get(i));
+                }
+            } catch (Exception e) {
+            }
+    }
+    public mainCalisan(Calisan c1) {
+        initComponents();
+        this.setTitle(c1.getPersonType() +" Ekranı :  | "+ c1.getAd() +" "+c1.getSoyad());
+        this.c1 = c1;
+        if (c1 instanceof Personel) {
+            btnBasvuru.setText("Müşterileri İncele");
+            btnProfil.setText("Profil ve Ayarlar");
+        }
+        if (c1 instanceof Yonetici) {
+             btnBasvuru.setText("Hesapları İncele");
+             btnProfil.setText("Profil ve Bildirimler");
+        }
+        DefaultTableModel m = (DefaultTableModel) tblKredi.getModel();
+        m.setRowCount(0);
+        try {
+            ArrayList<Object[]> hesaplar2 = c1.kredileriCek();
+            for (int i = 0; i < hesaplar2.size(); i++) {
+                m.addRow(hesaplar2.get(i));
+            }
+        } catch (Exception e) {
+        }
+        txtIsim.setText("Merhaba " + c1.getAd());
+        tblKredi.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 13));
+        tblKredi.getTableHeader().setOpaque(false);
+        tblKredi.getTableHeader().setDefaultRenderer(new HeaderColor());
+        tblKredi.getTableHeader().setForeground(new Color(255, 255, 255));
+        tblKredi.setRowHeight(25);
+        tblKrediKarti.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 13));
+        tblKrediKarti.getTableHeader().setOpaque(false);
+        tblKrediKarti.getTableHeader().setDefaultRenderer(new HeaderColor());
+        tblKrediKarti.getTableHeader().setForeground(new Color(255, 255, 255));
+        tblKrediKarti.setRowHeight(25);
+        tblTransfer.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 13));
+        tblTransfer.getTableHeader().setOpaque(false);
+        tblTransfer.getTableHeader().setDefaultRenderer(new HeaderColor());
+        tblTransfer.getTableHeader().setForeground(new Color(255, 255, 255));
+        tblTransfer.setRowHeight(25);
+        tblLimit.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 13));
+        tblLimit.getTableHeader().setOpaque(false);
+        tblLimit.getTableHeader().setDefaultRenderer(new HeaderColor());
+        tblLimit.getTableHeader().setForeground(new Color(255, 255, 255));
+        tblLimit.setRowHeight(25);
+        tblHesap.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 13));
+        tblHesap.getTableHeader().setOpaque(false);
+        tblHesap.getTableHeader().setDefaultRenderer(new HeaderColor());
+        tblHesap.getTableHeader().setForeground(new Color(255, 255, 255));
+        tblHesap.setRowHeight(25);
+        pnlKredi.setVisible(true);
+        pnlKrediKarti.setVisible(false);
+        pnlTransfer.setVisible(false);
+        pnlLimit.setVisible(false);
+        pnlIncele.setVisible(false);
+        pnlProfil.setVisible(false);
+        setLocationRelativeTo(null);
+        this.setResizable(false);
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        pnlMenu = new javax.swing.JPanel();
+        btnProfil = new javax.swing.JLabel();
+        btnHesabim = new javax.swing.JLabel();
+        btnKredi = new javax.swing.JLabel();
+        btnOdemeler = new javax.swing.JLabel();
+        btnTransfer = new javax.swing.JLabel();
+        btnBasvuru = new javax.swing.JLabel();
+        pnlKredi = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblKredi = new javax.swing.JTable();
+        btnReddetKredi = new javax.swing.JButton();
+        btnOnayKedi = new javax.swing.JButton();
+        pnlKrediKarti = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblKrediKarti = new javax.swing.JTable();
+        btnReddetKrediKarti = new javax.swing.JButton();
+        btnOnayKrediKarti = new javax.swing.JButton();
+        pnlTransfer = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblTransfer = new javax.swing.JTable();
+        btnReddetTransfer = new javax.swing.JButton();
+        btnOnayTransfer = new javax.swing.JButton();
+        pnlLimit = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblLimit = new javax.swing.JTable();
+        btnReddetLimit = new javax.swing.JButton();
+        btnOnayLimit = new javax.swing.JButton();
+        pnlIncele = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblHesap = new javax.swing.JTable();
+        btnhesaplariIncele = new javax.swing.JButton();
+        btnhesaplariIncele1 = new javax.swing.JButton();
+        pnlProfil = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        btnYoneticiKendiProfil = new javax.swing.JButton();
+        btnSfireGuncelle2 = new javax.swing.JButton();
+        btnYoneticiKendiProfil1 = new javax.swing.JButton();
+        btnSfireGuncelle = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        btnYoneticiKendiProfil2 = new javax.swing.JButton();
+        btnYoneticiKendiProfil3 = new javax.swing.JButton();
+        btnSfireGuncelle1 = new javax.swing.JButton();
+        txtIsim = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(20, 26, 54));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(20, 26, 54));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlMenu.setBackground(new java.awt.Color(27, 36, 66));
+        pnlMenu.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(0, 0, 0)));
+        pnlMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnProfil.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnProfil.setForeground(new java.awt.Color(204, 204, 204));
+        btnProfil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnProfil.setText("Ayarlar ve Profil");
+        btnProfil.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+        btnProfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnProfilMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnProfilMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnProfilMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnProfilMouseReleased(evt);
+            }
+        });
+        pnlMenu.add(btnProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 0, 150, 70));
+
+        btnHesabim.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnHesabim.setForeground(new java.awt.Color(85, 110, 255));
+        btnHesabim.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnHesabim.setText("Kredi Onay");
+        btnHesabim.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+        btnHesabim.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHesabimMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHesabimMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnHesabimMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnHesabimMouseReleased(evt);
+            }
+        });
+        pnlMenu.add(btnHesabim, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 120, 70));
+
+        btnKredi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnKredi.setForeground(new java.awt.Color(204, 204, 204));
+        btnKredi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnKredi.setText("Kredi Kartı Onay");
+        btnKredi.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+        btnKredi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnKrediMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnKrediMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnKrediMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnKrediMouseReleased(evt);
+            }
+        });
+        pnlMenu.add(btnKredi, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 120, 70));
+
+        btnOdemeler.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnOdemeler.setForeground(new java.awt.Color(204, 204, 204));
+        btnOdemeler.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnOdemeler.setText("Transfer Onay");
+        btnOdemeler.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+        btnOdemeler.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnOdemelerMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnOdemelerMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnOdemelerMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnOdemelerMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnOdemelerMouseReleased(evt);
+            }
+        });
+        pnlMenu.add(btnOdemeler, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 120, 70));
+
+        btnTransfer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnTransfer.setForeground(new java.awt.Color(204, 204, 204));
+        btnTransfer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnTransfer.setText("Kredi Kartı Yeni Limit Onay");
+        btnTransfer.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+        btnTransfer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnTransferMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnTransferMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnTransferMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnTransferMouseReleased(evt);
+            }
+        });
+        pnlMenu.add(btnTransfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 200, 70));
+
+        btnBasvuru.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBasvuru.setForeground(new java.awt.Color(204, 204, 204));
+        btnBasvuru.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnBasvuru.setText("Müşteri İncele");
+        btnBasvuru.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+        btnBasvuru.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnBasvuruMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnBasvuruMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnBasvuruMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnBasvuruMouseReleased(evt);
+            }
+        });
+        pnlMenu.add(btnBasvuru, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, 120, 70));
+
+        jPanel1.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1010, 70));
+
+        pnlKredi.setBackground(new java.awt.Color(20, 26, 54));
+        pnlKredi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblKredi.setBackground(java.awt.Color.white);
+        tblKredi.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        tblKredi.setForeground(new java.awt.Color(20, 26, 54));
+        tblKredi.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Hesap ID", "Kredi Türü", "Istenen Ücret", "Alınacak Ücret", "Yatırılacak Hesap No"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblKredi.setFocusable(false);
+        tblKredi.setGridColor(java.awt.Color.white);
+        tblKredi.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblKredi.setOpaque(false);
+        tblKredi.setRowHeight(25);
+        tblKredi.setSelectionBackground(new java.awt.Color(20, 11, 32));
+        tblKredi.setSelectionForeground(java.awt.Color.white);
+        tblKredi.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblKredi.getTableHeader().setReorderingAllowed(false);
+        tblKredi.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+                tblKrediAncestorRemoved(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblKredi);
+
+        pnlKredi.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 860, 300));
+
+        btnReddetKredi.setBackground(new java.awt.Color(204, 204, 204));
+        btnReddetKredi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnReddetKredi.setForeground(java.awt.Color.red);
+        btnReddetKredi.setText("REDDET");
+        btnReddetKredi.setOpaque(false);
+        btnReddetKredi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReddetKrediActionPerformed(evt);
+            }
+        });
+        pnlKredi.add(btnReddetKredi, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 180, 50));
+
+        btnOnayKedi.setBackground(new java.awt.Color(204, 204, 204));
+        btnOnayKedi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnOnayKedi.setForeground(java.awt.Color.green);
+        btnOnayKedi.setText("ONAY VER");
+        btnOnayKedi.setOpaque(false);
+        btnOnayKedi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOnayKediActionPerformed(evt);
+            }
+        });
+        pnlKredi.add(btnOnayKedi, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, 180, 50));
+
+        jPanel1.add(pnlKredi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 970, 450));
+
+        pnlKrediKarti.setBackground(new java.awt.Color(20, 26, 54));
+        pnlKrediKarti.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblKrediKarti.setBackground(java.awt.Color.white);
+        tblKrediKarti.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        tblKrediKarti.setForeground(new java.awt.Color(20, 26, 54));
+        tblKrediKarti.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Hesap ID", "İstenen Miktar"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblKrediKarti.setFocusable(false);
+        tblKrediKarti.setGridColor(java.awt.Color.black);
+        tblKrediKarti.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblKrediKarti.setOpaque(false);
+        tblKrediKarti.setRowHeight(25);
+        tblKrediKarti.setSelectionBackground(new java.awt.Color(20, 11, 32));
+        tblKrediKarti.setSelectionForeground(java.awt.Color.white);
+        tblKrediKarti.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblKrediKarti.setShowVerticalLines(false);
+        tblKrediKarti.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(tblKrediKarti);
+
+        pnlKrediKarti.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 860, 300));
+
+        btnReddetKrediKarti.setBackground(new java.awt.Color(204, 204, 204));
+        btnReddetKrediKarti.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnReddetKrediKarti.setForeground(java.awt.Color.red);
+        btnReddetKrediKarti.setText("REDDET");
+        btnReddetKrediKarti.setOpaque(false);
+        btnReddetKrediKarti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReddetKrediKartiActionPerformed(evt);
+            }
+        });
+        pnlKrediKarti.add(btnReddetKrediKarti, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 180, 50));
+
+        btnOnayKrediKarti.setBackground(new java.awt.Color(204, 204, 204));
+        btnOnayKrediKarti.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnOnayKrediKarti.setForeground(java.awt.Color.green);
+        btnOnayKrediKarti.setText("ONAY VER");
+        btnOnayKrediKarti.setOpaque(false);
+        btnOnayKrediKarti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOnayKrediKartiActionPerformed(evt);
+            }
+        });
+        pnlKrediKarti.add(btnOnayKrediKarti, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, 180, 50));
+
+        jPanel1.add(pnlKrediKarti, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 970, 450));
+
+        pnlTransfer.setBackground(new java.awt.Color(20, 26, 54));
+        pnlTransfer.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblTransfer.setBackground(java.awt.Color.white);
+        tblTransfer.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        tblTransfer.setForeground(new java.awt.Color(20, 26, 54));
+        tblTransfer.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Gönderici IBAN", "Alıcı IBAN", "Gönderilecek Ücret"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblTransfer.setGridColor(java.awt.Color.black);
+        tblTransfer.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblTransfer.setOpaque(false);
+        tblTransfer.setRowHeight(25);
+        tblTransfer.setSelectionBackground(new java.awt.Color(20, 11, 32));
+        tblTransfer.setSelectionForeground(java.awt.Color.white);
+        tblTransfer.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblTransfer.setShowVerticalLines(false);
+        tblTransfer.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(tblTransfer);
+        if (tblTransfer.getColumnModel().getColumnCount() > 0) {
+            tblTransfer.getColumnModel().getColumn(2).setHeaderValue("Yeni Limit Talebi");
+        }
+
+        pnlTransfer.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 860, 300));
+
+        btnReddetTransfer.setBackground(new java.awt.Color(204, 204, 204));
+        btnReddetTransfer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnReddetTransfer.setForeground(java.awt.Color.red);
+        btnReddetTransfer.setText("REDDET");
+        btnReddetTransfer.setOpaque(false);
+        btnReddetTransfer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReddetTransferActionPerformed(evt);
+            }
+        });
+        pnlTransfer.add(btnReddetTransfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 180, 50));
+
+        btnOnayTransfer.setBackground(new java.awt.Color(204, 204, 204));
+        btnOnayTransfer.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnOnayTransfer.setForeground(java.awt.Color.green);
+        btnOnayTransfer.setText("ONAY VER");
+        btnOnayTransfer.setOpaque(false);
+        btnOnayTransfer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOnayTransferActionPerformed(evt);
+            }
+        });
+        pnlTransfer.add(btnOnayTransfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, 180, 50));
+
+        jPanel1.add(pnlTransfer, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 970, 450));
+
+        pnlLimit.setBackground(new java.awt.Color(20, 26, 54));
+        pnlLimit.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblLimit.setBackground(java.awt.Color.white);
+        tblLimit.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        tblLimit.setForeground(new java.awt.Color(20, 26, 54));
+        tblLimit.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Müşteri ID", "Kredi Kart No", "Yeni Limit Talebi"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblLimit.setGridColor(java.awt.Color.black);
+        tblLimit.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblLimit.setOpaque(false);
+        tblLimit.setRowHeight(25);
+        tblLimit.setSelectionBackground(new java.awt.Color(20, 11, 32));
+        tblLimit.setSelectionForeground(java.awt.Color.white);
+        tblLimit.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblLimit.setShowVerticalLines(false);
+        tblLimit.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(tblLimit);
+        if (tblLimit.getColumnModel().getColumnCount() > 0) {
+            tblLimit.getColumnModel().getColumn(2).setHeaderValue("Yeni Limit Talebi");
+        }
+
+        pnlLimit.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 860, 300));
+
+        btnReddetLimit.setBackground(new java.awt.Color(204, 204, 204));
+        btnReddetLimit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnReddetLimit.setForeground(java.awt.Color.red);
+        btnReddetLimit.setText("REDDET");
+        btnReddetLimit.setOpaque(false);
+        btnReddetLimit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReddetLimitActionPerformed(evt);
+            }
+        });
+        pnlLimit.add(btnReddetLimit, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, 180, 50));
+
+        btnOnayLimit.setBackground(new java.awt.Color(204, 204, 204));
+        btnOnayLimit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnOnayLimit.setForeground(java.awt.Color.green);
+        btnOnayLimit.setText("ONAY VER");
+        btnOnayLimit.setOpaque(false);
+        btnOnayLimit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOnayLimitActionPerformed(evt);
+            }
+        });
+        pnlLimit.add(btnOnayLimit, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 340, 180, 50));
+
+        jPanel1.add(pnlLimit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 970, 450));
+
+        pnlIncele.setBackground(new java.awt.Color(20, 26, 54));
+        pnlIncele.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tblHesap.setBackground(java.awt.Color.white);
+        tblHesap.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        tblHesap.setForeground(new java.awt.Color(20, 26, 54));
+        tblHesap.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Numara", "Kullanıcı ID", "Kullanıcı Tipi"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblHesap.setGridColor(java.awt.Color.black);
+        tblHesap.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tblHesap.setOpaque(false);
+        tblHesap.setRowHeight(25);
+        tblHesap.setSelectionBackground(new java.awt.Color(20, 11, 32));
+        tblHesap.setSelectionForeground(java.awt.Color.white);
+        tblHesap.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblHesap.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblHesap.setShowVerticalLines(false);
+        tblHesap.getTableHeader().setReorderingAllowed(false);
+        jScrollPane5.setViewportView(tblHesap);
+
+        pnlIncele.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 860, 300));
+
+        btnhesaplariIncele.setBackground(new java.awt.Color(204, 204, 204));
+        btnhesaplariIncele.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnhesaplariIncele.setForeground(new java.awt.Color(0, 0, 255));
+        btnhesaplariIncele.setText("İNCELE");
+        btnhesaplariIncele.setOpaque(false);
+        btnhesaplariIncele.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnhesaplariInceleActionPerformed(evt);
+            }
+        });
+        pnlIncele.add(btnhesaplariIncele, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 180, 50));
+
+        btnhesaplariIncele1.setBackground(new java.awt.Color(204, 204, 204));
+        btnhesaplariIncele1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnhesaplariIncele1.setForeground(new java.awt.Color(0, 0, 255));
+        btnhesaplariIncele1.setText("GÜNCELLE");
+        btnhesaplariIncele1.setOpaque(false);
+        btnhesaplariIncele1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnhesaplariIncele1ActionPerformed(evt);
+            }
+        });
+        pnlIncele.add(btnhesaplariIncele1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 180, 50));
+
+        jPanel1.add(pnlIncele, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 970, 450));
+
+        pnlProfil.setBackground(new java.awt.Color(20, 26, 54));
+        pnlProfil.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.white);
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Güvenliğiniz için şifrenizi belirli aralıklarla değiştirmeniz işlemleriniz için daha sağlıklı olabilir.");
+        jLabel1.setFocusable(false);
+        jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        pnlProfil.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 930, 90));
+
+        jPanel2.setBackground(new java.awt.Color(20, 26, 54));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        jLabel2.setForeground(java.awt.Color.white);
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Banka yönetiminizi değerlendirebileceğiniz seçenekler");
+        jLabel2.setFocusable(false);
+        jLabel2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 930, 40));
+
+        btnYoneticiKendiProfil.setBackground(java.awt.Color.white);
+        btnYoneticiKendiProfil.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnYoneticiKendiProfil.setForeground(java.awt.Color.blue);
+        btnYoneticiKendiProfil.setText("KENDİ PROFİLİM");
+        btnYoneticiKendiProfil.setOpaque(false);
+        btnYoneticiKendiProfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnYoneticiKendiProfilActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnYoneticiKendiProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, 180, 50));
+
+        btnSfireGuncelle2.setBackground(java.awt.Color.white);
+        btnSfireGuncelle2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSfireGuncelle2.setForeground(java.awt.Color.blue);
+        btnSfireGuncelle2.setText("PERSONEL YÖNETİMİ");
+        btnSfireGuncelle2.setOpaque(false);
+        btnSfireGuncelle2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSfireGuncelle2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSfireGuncelle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 180, 50));
+
+        btnYoneticiKendiProfil1.setBackground(java.awt.Color.white);
+        btnYoneticiKendiProfil1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnYoneticiKendiProfil1.setForeground(java.awt.Color.blue);
+        btnYoneticiKendiProfil1.setText("MAAŞINI ÖĞREN");
+        btnYoneticiKendiProfil1.setOpaque(false);
+        btnYoneticiKendiProfil1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnYoneticiKendiProfil1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnYoneticiKendiProfil1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 180, 50));
+
+        pnlProfil.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 970, 120));
+
+        btnSfireGuncelle.setBackground(java.awt.Color.white);
+        btnSfireGuncelle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSfireGuncelle.setForeground(java.awt.Color.blue);
+        btnSfireGuncelle.setText("ŞİFRE GÜNCELLE");
+        btnSfireGuncelle.setOpaque(false);
+        btnSfireGuncelle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSfireGuncelleActionPerformed(evt);
+            }
+        });
+        pnlProfil.add(btnSfireGuncelle, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 180, 50));
+
+        jPanel3.setBackground(new java.awt.Color(20, 26, 54));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 16)); // NOI18N
+        jLabel3.setForeground(java.awt.Color.white);
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Yaptığını tüm işlemleri, başvuruları , onaylamaları ve reddetmeleri yeniden eskiye doğru sıralı bir şekilde görebilir ve maaşınızı öğrenebilirsiniz.");
+        jLabel3.setFocusable(false);
+        jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 930, 40));
+
+        btnYoneticiKendiProfil2.setBackground(java.awt.Color.white);
+        btnYoneticiKendiProfil2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnYoneticiKendiProfil2.setForeground(java.awt.Color.blue);
+        btnYoneticiKendiProfil2.setText("KENDİ PROFİLİM");
+        btnYoneticiKendiProfil2.setOpaque(false);
+        btnYoneticiKendiProfil2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnYoneticiKendiProfil2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnYoneticiKendiProfil2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, 180, 50));
+
+        btnYoneticiKendiProfil3.setBackground(java.awt.Color.white);
+        btnYoneticiKendiProfil3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnYoneticiKendiProfil3.setForeground(java.awt.Color.blue);
+        btnYoneticiKendiProfil3.setText("MAAŞINI ÖĞREN");
+        btnYoneticiKendiProfil3.setOpaque(false);
+        btnYoneticiKendiProfil3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnYoneticiKendiProfil3ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnYoneticiKendiProfil3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, 180, 50));
+
+        pnlProfil.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 970, 120));
+
+        btnSfireGuncelle1.setBackground(java.awt.Color.white);
+        btnSfireGuncelle1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSfireGuncelle1.setForeground(java.awt.Color.blue);
+        btnSfireGuncelle1.setText("ÇIKIŞ YAP");
+        btnSfireGuncelle1.setOpaque(false);
+        btnSfireGuncelle1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSfireGuncelle1ActionPerformed(evt);
+            }
+        });
+        pnlProfil.add(btnSfireGuncelle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, 180, 50));
+
+        jPanel1.add(pnlProfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 970, 450));
+
+        txtIsim.setFont(new java.awt.Font("Segoe UI Light", 0, 24)); // NOI18N
+        txtIsim.setForeground(new java.awt.Color(255, 255, 255));
+        txtIsim.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtIsim.setText("Merhaba ");
+        jPanel1.add(txtIsim, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 20, 990, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 620));
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+     boolean isHesabimOk = true, isKrediOk = false, isOdemelerOk = false, isTransferOk = false, isProfilOk = false, isBasvuruOk = false;
+    private void btnReddetKrediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReddetKrediActionPerformed
+        // TODO add your handling code here:
+        if(tblKredi.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,
+                        "Bekleyen uygun başvuru yok.",
+                        "İşlem yapılmadı",
+                        JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            if (tblKredi.getSelectedRowCount() != 1) {
+                JOptionPane.showMessageDialog(null,
+                        "Birden fazla seçim yapılamaz. Lütfen tekerli seçimler yapın.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+            } else {
+                int reply = JOptionPane.showConfirmDialog(null, "Seçilen kredi başvurusu reddedilecek. Emin misiniz?", "Reddedilsin Mi?", JOptionPane.YES_NO_OPTION);
+                if (reply == JOptionPane.YES_OPTION) {
+                    DefaultTableModel m = (DefaultTableModel) tblKredi.getModel();
+                    int row = tblKredi.getSelectedRow();
+                    String value = m.getValueAt(row, 0).toString() + "," + m.getValueAt(row, 1).toString() + "," + m.getValueAt(row, 2).toString() + "," + m.getValueAt(row, 3).toString() + "," + m.getValueAt(row, 4).toString();
+                    //System.out.println(value);
+                    if (c1.krediReddet(value)) {
+                        JOptionPane.showMessageDialog(null, "İstenilen kredi reddedildi.");
+                        m.setRowCount(0);
+                        try {
+                            ArrayList<Object[]> hesaplar2 = c1.kredileriCek();
+                            for (int i = 0; i < hesaplar2.size(); i++) {
+
+                                m.addRow(hesaplar2.get(i));
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                } else {
+
+                }
+            }
+        }
+        
+        
+        
+
+    }//GEN-LAST:event_btnReddetKrediActionPerformed
+
+    private void btnOnayKediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOnayKediActionPerformed
+        // TODO add your handling code here:
+        if(tblKredi.getRowCount()==0){
+            JOptionPane.showMessageDialog(null,
+                        "Bekleyen uygun başvuru yok.",
+                        "İşlem yapılmadı",
+                        JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            if (tblKredi.getSelectedRowCount() != 1) {
+                JOptionPane.showMessageDialog(null,
+                        "Birden fazla seçim yapılamaz. Lütfen tekerli seçimler yapın.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+            } else {
+                int reply = JOptionPane.showConfirmDialog(null, "Seçilen kredi başvurusu onaylanacak. Emin misiniz?", "Onaylansın Mı?", JOptionPane.YES_NO_OPTION);
+                if (reply == JOptionPane.YES_OPTION) {
+                    DefaultTableModel m = (DefaultTableModel) tblKredi.getModel();
+                    int row = tblKredi.getSelectedRow();
+                    String value = m.getValueAt(row, 0).toString() + "," + m.getValueAt(row, 1).toString() + "," + m.getValueAt(row, 2).toString() + "," + m.getValueAt(row, 3).toString() + "," + m.getValueAt(row, 4).toString();
+                    //System.out.println(value);
+                    if (c1.krediOnayla(value, Float.valueOf(value.split(",")[2]))) {
+                        JOptionPane.showMessageDialog(null, "İstenilen kredi başarıyla onaylandı. Müşteriye ait borç bilgisi eklendi.");
+                        m.setRowCount(0);
+                        try {
+                            ArrayList<Object[]> hesaplar2 = c1.kredileriCek();
+                            for (int i = 0; i < hesaplar2.size(); i++) {
+                                m.addRow(hesaplar2.get(i));
+                            }
+                        } catch (Exception e) {
+                        }
+
+                    }
+                } else {
+
+                }
+            }
+        }
+        
+        
+        
+        
+         
+        
+    }//GEN-LAST:event_btnOnayKediActionPerformed
+
+    private void btnReddetKrediKartiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReddetKrediKartiActionPerformed
+        // TODO add your handling code here:
+        if(tblKrediKarti.getSelectedRowCount()!=1){
+            JOptionPane.showMessageDialog(null,
+                        "Birden fazla seçim yapılamaz. Lütfen tekerli seçimler yapın.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            int reply = JOptionPane.showConfirmDialog(null, "Seçilen kredi kartı başvurusu reddedilecek. Emin misiniz?", "Reddedilsin Mi?", JOptionPane.YES_NO_OPTION);
+            if (reply == JOptionPane.YES_OPTION) {
+                DefaultTableModel m = (DefaultTableModel) tblKrediKarti.getModel();
+                int row = tblKrediKarti.getSelectedRow();
+                String value = m.getValueAt(row, 0).toString() + "," + m.getValueAt(row, 1).toString();
+                //System.out.println(value);
+                if (c1.krediKartiReddet(value)) {
+                    JOptionPane.showMessageDialog(null, "İstenilen kredi kartı talebi reddedildi.");
+                    m.setRowCount(0);
+                    try {
+                        ArrayList<Object[]> hesaplar2 = c1.krediKartlariCek();
+                        for (int i = 0; i < hesaplar2.size(); i++) {
+                            
+                            m.addRow(hesaplar2.get(i));
+                        }
+                    } catch (Exception e) {
+                    }
+                }
+            } else {
+
+            }
+        }
+    }//GEN-LAST:event_btnReddetKrediKartiActionPerformed
+
+    private void btnOnayKrediKartiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOnayKrediKartiActionPerformed
+        // TODO add your handling code here:
+        if(tblKrediKarti.getSelectedRowCount()!=1){
+            JOptionPane.showMessageDialog(null,
+                        "Birden fazla seçim yapılamaz. Lütfen tekerli seçimler yapın.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            int reply = JOptionPane.showConfirmDialog(null, "Seçilen kredi kartı başvurusu onaylanacak. Emin misiniz?", "Onaylansın Mı?", JOptionPane.YES_NO_OPTION);
+            if (reply == JOptionPane.YES_OPTION) {
+                DefaultTableModel m = (DefaultTableModel) tblKrediKarti.getModel();
+                int row = tblKrediKarti.getSelectedRow();
+                String value = m.getValueAt(row, 0).toString() + "," + m.getValueAt(row, 1).toString();
+                //System.out.println(value);
+                if (c1.krediKartiOnayla(value)) {
+                    JOptionPane.showMessageDialog(null, "İstenilen kredi kartı limitiyle birlikte başarıyla onaylandı.");
+                    m.setRowCount(0);
+                    try {
+                        ArrayList<Object[]> hesaplar2 = c1.krediKartlariCek();
+                        for (int i = 0; i < hesaplar2.size(); i++) {
+                            m.addRow(hesaplar2.get(i));
+                        }
+                    } catch (Exception e) {
+                    }
+
+                }
+            } else {
+
+            }
+        }
+    }//GEN-LAST:event_btnOnayKrediKartiActionPerformed
+
+    private void btnReddetTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReddetTransferActionPerformed
+        // TODO add your handling code here:
+        if(tblTransfer.getSelectedRowCount()!=1){
+            JOptionPane.showMessageDialog(null,
+                        "Birden fazla seçim yapılamaz. Lütfen tekerli seçimler yapın.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            int reply = JOptionPane.showConfirmDialog(null, "Seçilen kredi kartı transfer başvurusu reddedilecek. Emin misiniz?", "Reddedilsin Mi?", JOptionPane.YES_NO_OPTION);
+            if (reply == JOptionPane.YES_OPTION) {
+                DefaultTableModel m = (DefaultTableModel) tblTransfer.getModel();
+                int row = tblTransfer.getSelectedRow();
+                
+                //System.out.println(value);
+                if (c1.transferReddet(m.getValueAt(row, 0).toString() + ",transfer," + m.getValueAt(row, 1).toString() +","+m.getValueAt(row, 2).toString())) {
+                    JOptionPane.showMessageDialog(null, "İstenilen kredi kartı talebi reddedildi.");
+                    m.setRowCount(0);
+                    try {
+                        ArrayList<Object[]> hesaplar2 = c1.transferleriCek();
+                        for (int i = 0; i < hesaplar2.size(); i++) {
+                            
+                            m.addRow(hesaplar2.get(i));
+                        }
+                    } catch (Exception e) {
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,
+                        "Beklenmedik bir hata oluştu. Bunun sebebi dosya dizilimleriyle alakalı olabilir. Lütfen programı yeniden açıp tekrar deneyin.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+
+            }
+        }
+    }//GEN-LAST:event_btnReddetTransferActionPerformed
+
+    private void btnOnayTransferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOnayTransferActionPerformed
+        // TODO add your handling code here:
+        if(tblTransfer.getSelectedRowCount()!=1){
+            JOptionPane.showMessageDialog(null,
+                        "Birden fazla seçim yapılamaz. Lütfen tekerli seçimler yapın.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            int reply = JOptionPane.showConfirmDialog(null, "Seçilen kredi kartı başvurusu onaylanacak. Emin misiniz?", "Onaylansın Mı?", JOptionPane.YES_NO_OPTION);
+            if (reply == JOptionPane.YES_OPTION) {
+                DefaultTableModel m = (DefaultTableModel) tblTransfer.getModel();
+                int row = tblTransfer.getSelectedRow();
+                //System.out.println(value);
+                if (c1.transferOnayla(m.getValueAt(row, 0).toString() , m.getValueAt(row, 1).toString(), Float.valueOf(m.getValueAt(row, 2).toString()))) {
+                    JOptionPane.showMessageDialog(null, "İstenilen kredi kartı limitiyle birlikte başarıyla onaylandı.");
+                    m.setRowCount(0);
+                    try {
+                        ArrayList<Object[]> hesaplar2 = c1.transferleriCek();
+                        for (int i = 0; i < hesaplar2.size(); i++) {
+                            m.addRow(hesaplar2.get(i));
+                        }
+                    } catch (Exception e) {
+                    }
+
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,
+                        "Onaylama işleminde bir hata oluştu. Gönderici hesapta yeterli para bulunmuyor. Lütfen talebi reddedin.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+
+            }
+        }
+    }//GEN-LAST:event_btnOnayTransferActionPerformed
+
+    private void tblKrediAncestorRemoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_tblKrediAncestorRemoved
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_tblKrediAncestorRemoved
+
+    private void btnReddetLimitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReddetLimitActionPerformed
+        // TODO add your handling code here:
+        if(tblLimit.getSelectedRowCount()!=1){
+            JOptionPane.showMessageDialog(null,
+                        "Birden fazla seçim yapılamaz. Lütfen tekerli seçimler yapın.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            int reply = JOptionPane.showConfirmDialog(null, "Seçilen kredi kartı yeni limit başvurusu reddedilecek. Emin misiniz?", "Reddedilsin Mi?", JOptionPane.YES_NO_OPTION);
+            if (reply == JOptionPane.YES_OPTION) {
+                DefaultTableModel m = (DefaultTableModel) tblLimit.getModel();
+                int row = tblLimit.getSelectedRow();
+                
+                //System.out.println(value);
+                if (c1.krediKartiLimitArtirimiReddet(m.getValueAt(row, 0).toString() + ",limitartirimi," + m.getValueAt(row, 1).toString() +","+m.getValueAt(row, 2).toString())) {
+                    JOptionPane.showMessageDialog(null, "İstenilen kredi kartı yeni limit talebi reddedildi.");
+                    m.setRowCount(0);
+                    try {
+                        ArrayList<Object[]> hesaplar2 = c1.krediKartiLimitArtirmaCek();
+                        for (int i = 0; i < hesaplar2.size(); i++) {
+                            
+                            m.addRow(hesaplar2.get(i));
+                        }
+                    } catch (Exception e) {
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,
+                        "Beklenmedik bir hata oluştu. Bunun sebebi dosya dizilimleriyle alakalı olabilir. Lütfen programı yeniden açıp tekrar deneyin.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+
+            }
+        }
+    }//GEN-LAST:event_btnReddetLimitActionPerformed
+
+    private void btnOnayLimitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOnayLimitActionPerformed
+        // TODO add your handling code here:
+        if(tblLimit.getSelectedRowCount()!=1){
+            JOptionPane.showMessageDialog(null,
+                        "Birden fazla seçim yapılamaz. Lütfen tekerli seçimler yapın.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            int reply = JOptionPane.showConfirmDialog(null, "Seçilen kredi kartı yeni limit başvurusu onaylanacak. Emin misiniz?", "Onaylansın Mı?", JOptionPane.YES_NO_OPTION);
+            if (reply == JOptionPane.YES_OPTION) {
+                DefaultTableModel m = (DefaultTableModel) tblLimit.getModel();
+                int row = tblLimit.getSelectedRow();
+                //System.out.println(value);
+                if (c1.krediKartiLimitArtirimiOnayla(m.getValueAt(row, 0).toString() , m.getValueAt(row, 1).toString(), Float.valueOf(m.getValueAt(row, 2).toString()))) {
+                    JOptionPane.showMessageDialog(null, "İstenilen kredi kartı yeni limitiyle birlikte başarıyla onaylandı.");
+                    m.setRowCount(0);
+                    try {
+                        ArrayList<Object[]> hesaplar2 = c1.krediKartiLimitArtirmaCek();
+                        for (int i = 0; i < hesaplar2.size(); i++) {
+                            m.addRow(hesaplar2.get(i));
+                        }
+                    } catch (Exception e) {
+                    }
+
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,
+                        "Onaylama işleminde bir hata oluştu.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+
+            }
+        }
+    }//GEN-LAST:event_btnOnayLimitActionPerformed
+
+    private void btnProfilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfilMouseEntered
+        // TODO add your handling code here:
+        if (isProfilOk == false) {
+            btnProfil.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(204, 204, 204)));
+        }
+    }//GEN-LAST:event_btnProfilMouseEntered
+
+    private void btnProfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfilMouseExited
+        // TODO add your handling code here:
+        if (isProfilOk == true) {
+            btnProfil.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+            btnProfil.setForeground(new java.awt.Color(85, 110, 255));
+        } else {
+            btnProfil.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnProfil.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_btnProfilMouseExited
+
+    private void btnProfilMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfilMousePressed
+        // TODO add your handling code here:
+        if (isProfilOk == false) {
+            isHesabimOk = false;
+            isKrediOk = false;
+            isOdemelerOk = false;
+            isTransferOk = false;
+            isBasvuruOk = false;
+            isProfilOk = true;
+            btnProfil.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(255, 255, 255)));
+            btnProfil.setForeground(new java.awt.Color(255, 255, 255));
+            btnKredi.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnKredi.setForeground(new java.awt.Color(204, 204, 204));
+            btnHesabim.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnHesabim.setForeground(new java.awt.Color(204, 204, 204));
+            btnOdemeler.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnOdemeler.setForeground(new java.awt.Color(204, 204, 204));
+            btnTransfer.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnTransfer.setForeground(new java.awt.Color(204, 204, 204));
+            btnBasvuru.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnBasvuru.setForeground(new java.awt.Color(204, 204, 204));
+            pnlKredi.setVisible(false);
+            pnlKrediKarti.setVisible(false);
+            pnlTransfer.setVisible(false);
+            pnlLimit.setVisible(false);
+            pnlIncele.setVisible(false);
+            pnlProfil.setVisible(true);
+            if (c1 instanceof Personel) {
+            jPanel3.setVisible(true);
+            jPanel2.setVisible(false);
+        }
+        if (c1 instanceof Yonetici) {
+             jPanel3.setVisible(false);
+            jPanel2.setVisible(true);
+        }
+        }
+    }//GEN-LAST:event_btnProfilMousePressed
+
+    private void btnProfilMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfilMouseReleased
+        // TODO add your handling code here:
+        if (isProfilOk == true) {
+            btnProfil.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+            btnProfil.setForeground(new java.awt.Color(85, 110, 255));
+        } else {
+            btnProfil.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnProfil.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_btnProfilMouseReleased
+
+    private void btnHesabimMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHesabimMouseEntered
+        // TODO add your handling code here:
+        if (isHesabimOk == false) {
+            btnHesabim.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(204, 204, 204)));
+        }
+    }//GEN-LAST:event_btnHesabimMouseEntered
+
+    private void btnHesabimMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHesabimMouseExited
+        // TODO add your handling code here:
+        if (isHesabimOk == true) {
+            btnHesabim.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+            btnHesabim.setForeground(new java.awt.Color(85, 110, 255));
+        } else {
+            btnHesabim.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnHesabim.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_btnHesabimMouseExited
+
+    private void btnHesabimMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHesabimMousePressed
+        // TODO add your handling code here:
+       if (isHesabimOk == false) {
+            isHesabimOk = true;
+            isKrediOk = false;
+            isOdemelerOk = false;
+            isTransferOk = false;
+            isBasvuruOk = false;
+            isProfilOk = false;
+            btnHesabim.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(255, 255, 255)));
+            btnHesabim.setForeground(new java.awt.Color(255, 255, 255));
+            btnKredi.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnKredi.setForeground(new java.awt.Color(204, 204, 204));
+            btnOdemeler.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnOdemeler.setForeground(new java.awt.Color(204, 204, 204));
+            btnTransfer.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnTransfer.setForeground(new java.awt.Color(204, 204, 204));
+            btnProfil.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnProfil.setForeground(new java.awt.Color(204, 204, 204));
+            btnBasvuru.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnBasvuru.setForeground(new java.awt.Color(204, 204, 204));
+            pnlKredi.setVisible(true);
+            pnlKrediKarti.setVisible(false);
+            pnlTransfer.setVisible(false);
+            pnlLimit.setVisible(false);
+            pnlIncele.setVisible(false);
+             pnlProfil.setVisible(false);
+            DefaultTableModel m = (DefaultTableModel) tblKredi.getModel();
+            m.setRowCount(0);
+            try {
+                ArrayList<Object[]> hesaplar2 = c1.kredileriCek();
+                for (int i = 0; i < hesaplar2.size(); i++) {
+                    m.addRow(hesaplar2.get(i));
+                }
+            } catch (Exception e) {
+            }
+
+        }
+    }//GEN-LAST:event_btnHesabimMousePressed
+
+    private void btnHesabimMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHesabimMouseReleased
+        // TODO add your handling code here:
+        if (isHesabimOk == true) {
+            btnHesabim.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+            btnHesabim.setForeground(new java.awt.Color(85, 110, 255));
+        } else {
+            btnHesabim.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnHesabim.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_btnHesabimMouseReleased
+
+    private void btnKrediMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKrediMouseEntered
+        // TODO add your handling code here:
+        if (isKrediOk == false) {
+            btnKredi.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(204, 204, 204)));
+        }
+    }//GEN-LAST:event_btnKrediMouseEntered
+
+    private void btnKrediMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKrediMouseExited
+        // TODO add your handling code here:
+        if (isKrediOk == true) {
+            btnKredi.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+            btnKredi.setForeground(new java.awt.Color(85, 110, 255));
+        } else {
+            btnKredi.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnKredi.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_btnKrediMouseExited
+
+    private void btnKrediMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKrediMousePressed
+        // TODO add your handling code here:
+        if (isKrediOk == false) {
+
+            isHesabimOk = false;
+            isKrediOk = true;
+            isOdemelerOk = false;
+
+            isTransferOk = false;
+            isProfilOk = false;
+            isBasvuruOk = false;
+
+            btnKredi.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(255, 255, 255)));
+            btnKredi.setForeground(new java.awt.Color(255, 255, 255));
+            btnHesabim.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnHesabim.setForeground(new java.awt.Color(204, 204, 204));
+            btnOdemeler.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnOdemeler.setForeground(new java.awt.Color(204, 204, 204));
+            btnTransfer.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnTransfer.setForeground(new java.awt.Color(204, 204, 204));
+            btnProfil.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnProfil.setForeground(new java.awt.Color(204, 204, 204));
+            btnBasvuru.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnBasvuru.setForeground(new java.awt.Color(204, 204, 204));
+            pnlKredi.setVisible(false);
+            pnlKrediKarti.setVisible(true);
+            pnlTransfer.setVisible(false);
+            pnlLimit.setVisible(false);
+            pnlIncele.setVisible(false);
+            pnlProfil.setVisible(false);
+            DefaultTableModel m = (DefaultTableModel) tblKrediKarti.getModel();
+            m.setRowCount(0);
+            try {
+                ArrayList<Object[]> hesaplar2 = c1.krediKartlariCek();
+                for (int i = 0; i < hesaplar2.size(); i++) {
+                    m.addRow(hesaplar2.get(i));
+                }
+            } catch (Exception e) {
+            }
+
+        }
+    }//GEN-LAST:event_btnKrediMousePressed
+
+    private void btnKrediMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKrediMouseReleased
+        // TODO add your handling code here:
+        if (isKrediOk == true) {
+            btnKredi.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+            btnKredi.setForeground(new java.awt.Color(85, 110, 255));
+        } else {
+            btnKredi.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnKredi.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_btnKrediMouseReleased
+
+    private void btnOdemelerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOdemelerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOdemelerMouseClicked
+
+    private void btnOdemelerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOdemelerMouseEntered
+        // TODO add your handling code here:
+        if (isOdemelerOk == false) {
+            btnOdemeler.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(204, 204, 204)));
+        }
+    }//GEN-LAST:event_btnOdemelerMouseEntered
+
+    private void btnOdemelerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOdemelerMouseExited
+        // TODO add your handling code here:
+        if (isOdemelerOk == true) {
+            btnOdemeler.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+            btnOdemeler.setForeground(new java.awt.Color(85, 110, 255));
+        } else {
+            btnOdemeler.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnOdemeler.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_btnOdemelerMouseExited
+
+    private void btnOdemelerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOdemelerMousePressed
+        // TODO add your handling code here:
+        if (isOdemelerOk == false) {
+            isHesabimOk = false;
+            isKrediOk = false;
+            isOdemelerOk = true;
+            isTransferOk = false;
+            isBasvuruOk = false;
+            isProfilOk = false;
+            btnOdemeler.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(255, 255, 255)));
+            btnOdemeler.setForeground(new java.awt.Color(255, 255, 255));
+            btnKredi.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnKredi.setForeground(new java.awt.Color(204, 204, 204));
+            btnHesabim.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnHesabim.setForeground(new java.awt.Color(204, 204, 204));
+            btnTransfer.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnTransfer.setForeground(new java.awt.Color(204, 204, 204));
+            btnProfil.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnProfil.setForeground(new java.awt.Color(204, 204, 204));
+            btnBasvuru.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnBasvuru.setForeground(new java.awt.Color(204, 204, 204));
+            pnlKredi.setVisible(false);
+            pnlKrediKarti.setVisible(false);
+            pnlTransfer.setVisible(true);
+            pnlLimit.setVisible(false);
+            pnlIncele.setVisible(false);
+            pnlProfil.setVisible(false);
+            DefaultTableModel m = (DefaultTableModel) tblTransfer.getModel();
+            m.setRowCount(0);
+            try {
+                ArrayList<Object[]> hesaplar2 = c1.transferleriCek();
+                for (int i = 0; i < hesaplar2.size(); i++) {
+                    m.addRow(hesaplar2.get(i));
+                }
+            } catch (Exception e) {
+            }
+
+        }
+    }//GEN-LAST:event_btnOdemelerMousePressed
+
+    private void btnOdemelerMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnOdemelerMouseReleased
+        // TODO add your handling code here:
+        if (isOdemelerOk == true) {
+            btnOdemeler.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+            btnOdemeler.setForeground(new java.awt.Color(85, 110, 255));
+        } else {
+            btnOdemeler.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnOdemeler.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_btnOdemelerMouseReleased
+
+    private void btnTransferMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTransferMouseEntered
+        // TODO add your handling code here:
+        if (isTransferOk == false) {
+            btnTransfer.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(204, 204, 204)));
+        }
+    }//GEN-LAST:event_btnTransferMouseEntered
+
+    private void btnTransferMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTransferMouseExited
+        // TODO add your handling code here:
+        if (isTransferOk == true) {
+            btnTransfer.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+            btnTransfer.setForeground(new java.awt.Color(85, 110, 255));
+        } else {
+            btnTransfer.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnTransfer.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_btnTransferMouseExited
+
+    private void btnTransferMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTransferMousePressed
+        // TODO add your handling code here:
+        if (isTransferOk == false) {
+            isHesabimOk = false;
+            isKrediOk = false;
+            isOdemelerOk = false;
+            isTransferOk = true;
+            isProfilOk = false;
+            isBasvuruOk = false;
+            btnTransfer.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(255, 255, 255)));
+            btnTransfer.setForeground(new java.awt.Color(255, 255, 255));
+            btnKredi.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnKredi.setForeground(new java.awt.Color(204, 204, 204));
+            btnHesabim.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnHesabim.setForeground(new java.awt.Color(204, 204, 204));
+            btnOdemeler.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnOdemeler.setForeground(new java.awt.Color(204, 204, 204));
+            btnProfil.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnProfil.setForeground(new java.awt.Color(204, 204, 204));
+            btnBasvuru.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnBasvuru.setForeground(new java.awt.Color(204, 204, 204));
+            pnlKredi.setVisible(false);
+            pnlKrediKarti.setVisible(false);
+            pnlTransfer.setVisible(false);
+            pnlLimit.setVisible(true);
+            pnlIncele.setVisible(false);
+            pnlProfil.setVisible(false);
+            DefaultTableModel m = (DefaultTableModel) tblLimit.getModel();
+            m.setRowCount(0);
+            try {
+                ArrayList<Object[]> hesaplar2 = c1.krediKartiLimitArtirmaCek();
+                for (int i = 0; i < hesaplar2.size(); i++) {
+                    m.addRow(hesaplar2.get(i));
+                }
+            } catch (Exception e) {
+            }
+
+        }
+    }//GEN-LAST:event_btnTransferMousePressed
+
+    private void btnTransferMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTransferMouseReleased
+        // TODO add your handling code here:
+        if (isTransferOk == true) {
+            btnTransfer.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+            btnTransfer.setForeground(new java.awt.Color(85, 110, 255));
+        } else {
+            btnTransfer.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnTransfer.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_btnTransferMouseReleased
+
+    private void btnBasvuruMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBasvuruMouseEntered
+        // TODO add your handling code here:
+        if (isBasvuruOk == false) {
+            btnBasvuru.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(204, 204, 204)));
+        }
+    }//GEN-LAST:event_btnBasvuruMouseEntered
+
+    private void btnBasvuruMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBasvuruMouseExited
+        // TODO add your handling code here:
+        if (isBasvuruOk == true) {
+            btnBasvuru.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+            btnBasvuru.setForeground(new java.awt.Color(85, 110, 255));
+        } else {
+            btnBasvuru.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnBasvuru.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_btnBasvuruMouseExited
+
+    private void btnBasvuruMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBasvuruMousePressed
+        // TODO add your handling code here:
+        if (isBasvuruOk == false) {
+            isHesabimOk = false;
+            isKrediOk = false;
+            isOdemelerOk = false;
+            isTransferOk = false;
+            isBasvuruOk = true;
+            isProfilOk = false;
+            btnBasvuru.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(255, 255, 255)));
+            btnBasvuru.setForeground(new java.awt.Color(255, 255, 255));
+            btnKredi.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnKredi.setForeground(new java.awt.Color(204, 204, 204));
+            btnHesabim.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnHesabim.setForeground(new java.awt.Color(204, 204, 204));
+            btnOdemeler.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnOdemeler.setForeground(new java.awt.Color(204, 204, 204));
+            btnTransfer.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnTransfer.setForeground(new java.awt.Color(204, 204, 204));
+            btnProfil.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnProfil.setForeground(new java.awt.Color(204, 204, 204));
+            pnlKredi.setVisible(false);
+            pnlKrediKarti.setVisible(false);
+            pnlTransfer.setVisible(false);
+            pnlLimit.setVisible(false);
+            pnlIncele.setVisible(true);
+            pnlProfil.setVisible(false);
+            DefaultTableModel m = (DefaultTableModel) tblHesap.getModel();
+            m.setRowCount(0);
+            System.out.println(c1.hesapListele().size());
+            try {
+                ArrayList<Object[]> hesaplar2 = c1.hesapListele();
+                for (int i = 0; i < hesaplar2.size(); i++) {
+                    m.addRow(hesaplar2.get(i));
+                }
+            } catch (Exception e) {
+            }
+            
+        }
+    }//GEN-LAST:event_btnBasvuruMousePressed
+
+    private void btnBasvuruMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBasvuruMouseReleased
+        // TODO add your handling code here:
+        if (isBasvuruOk == true) {
+            btnBasvuru.setBorder(new MatteBorder(0, 0, 5, 0, new java.awt.Color(85, 110, 255)));
+            btnBasvuru.setForeground(new java.awt.Color(85, 110, 255));
+        } else {
+            btnBasvuru.setBorder(new MatteBorder(0, 0, 0, 0, new java.awt.Color(27, 36, 66)));
+            btnBasvuru.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }//GEN-LAST:event_btnBasvuruMouseReleased
+
+    private void btnhesaplariInceleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhesaplariInceleActionPerformed
+        // TODO add your handling code here:
+        if (tblHesap.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Uygun bir seçenek yok.",
+                    "İşlem yapılmadı",
+                    JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (tblHesap.getSelectedRowCount() != 1) {
+                JOptionPane.showMessageDialog(null,
+                        "Birden fazla seçim yapılamaz. Lütfen tekerli seçimler yapın.",
+                        "İşlem alınmadı",
+                        JOptionPane.ERROR_MESSAGE);
+            } else {
+                if (c1 instanceof Yonetici) {
+                    DefaultTableModel m = (DefaultTableModel) tblHesap.getModel();
+                    int row = tblHesap.getSelectedRow();
+                    //System.out.println(value);
+                    if (m.getValueAt(row, 2).toString().equals("Müşteri")) {
+                        Kullanici k1 = new Musteri(m.getValueAt(row, 1).toString(), "Kullanıcı");
+                        KullaniciDuzenle h1 = new KullaniciDuzenle((Musteri) k1,"Müşteri");
+                        h1.setVisible(true);
+                    } else {
+                        Kullanici k1 = new Personel(m.getValueAt(row, 1).toString(), m.getValueAt(row, 2).toString());
+                        KullaniciDuzenle h1 = new KullaniciDuzenle((Personel) k1,"Personel");
+                        h1.setVisible(true);
+                    }
+
+                } else {
+                    DefaultTableModel m = (DefaultTableModel) tblHesap.getModel();
+                    int row = tblHesap.getSelectedRow();
+                    //System.out.println(value);
+                    Kullanici k1 = new Kullanici(m.getValueAt(row, 1).toString(), "Kullanıcı");
+                    HesapDetay h1 = new HesapDetay(k1,"Müşteri");
+                    h1.setVisible(true);
+                }
+            }
+        }
+        
+        
+    }//GEN-LAST:event_btnhesaplariInceleActionPerformed
+
+    private void btnSfireGuncelleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSfireGuncelleActionPerformed
+        // TODO add your handling code here:
+        JPanel panel = new JPanel();
+
+        //Set JPanel layout using GridLayout
+        panel.setLayout(new GridLayout(4, 1));
+
+        //Create a label with text (Username)
+        JLabel username = new JLabel("Şifreniz : ");
+
+        //Create a label with text (Password)
+        JLabel password = new JLabel("Yeni Şifreniz : ");
+        JLabel password1 = new JLabel("Yeni Şifreniz Tekrar : ");
+
+        //Create text field that will use to enter username
+        JPasswordField eski = new JPasswordField(16);
+
+        //Create password field that will be use to enter password
+        JPasswordField yeni = new JPasswordField(16);
+        JPasswordField yenitekrar = new JPasswordField(16);
+
+        //Add label with text (username) into created panel
+        panel.add(username);
+
+        //Add text field into created panel
+        panel.add(eski);
+
+        //Add label with text (password) into created panel
+        panel.add(password);
+
+        //Add password field into created panel
+        panel.add(yeni);
+        panel.add(password1);
+
+        //Add password field into created panel
+        panel.add(yenitekrar);
+
+        //Create a window using JFrame with title ( Two text component in JOptionPane )
+        //Show JOptionPane that will ask user for username and password
+        int a = JOptionPane.showConfirmDialog(null, panel, "Şifre Güncelleme", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        //Operation that will do when user click 'OK'
+        if (a == JOptionPane.OK_OPTION) {
+            if (String.valueOf(yeni.getPassword()).equals(String.valueOf(yenitekrar.getPassword()))) {
+                if (c1.sifreGuncelle(String.valueOf(eski.getPassword()), String.valueOf(yeni.getPassword()))) {
+                    JOptionPane.showMessageDialog(null, "Şifreniz başarıyla güncellenmiştir.");
+                } else {
+                    JOptionPane.showMessageDialog(null,
+                        "Şifreniz değiştirilemedi. Lütfen bilgileri kontrol edin.",
+                        "İstek gerçekleştirilemedi",
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null,
+                    "Lütfen yeni şifreniz ve yeni şifreniz tekrar kısımlarını aynı giriniz.",
+                    "Eşleştirme hatası",
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        } //Operation that will do when user click 'Cancel'
+        else if (a == JOptionPane.CANCEL_OPTION) {
+            JOptionPane.showMessageDialog(null,
+                "İşlemi iptal ettiniz",
+                "İptal",
+                JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnSfireGuncelleActionPerformed
+
+    private void btnYoneticiKendiProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnYoneticiKendiProfilActionPerformed
+        // TODO add your handling code here:
+        HesapDetay h1 = new HesapDetay(this.c1,c1.getPersonType());
+        h1.setVisible(true);
+    }//GEN-LAST:event_btnYoneticiKendiProfilActionPerformed
+
+    private void btnSfireGuncelle2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSfireGuncelle2ActionPerformed
+        // TODO add your handling code here:
+        PersonelYonetim p1 = new PersonelYonetim((Yonetici)this.c1);
+        p1.setVisible(true);
+    }//GEN-LAST:event_btnSfireGuncelle2ActionPerformed
+
+    private void btnYoneticiKendiProfil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnYoneticiKendiProfil1ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Maaşınız : " + c1.getMaas() + "TL");
+    }//GEN-LAST:event_btnYoneticiKendiProfil1ActionPerformed
+
+    private void btnYoneticiKendiProfil2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnYoneticiKendiProfil2ActionPerformed
+        // TODO add your handling code here:
+        HesapDetay h1 = new HesapDetay(this.c1,c1.getPersonType());
+        h1.setVisible(true);
+    }//GEN-LAST:event_btnYoneticiKendiProfil2ActionPerformed
+
+    private void btnYoneticiKendiProfil3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnYoneticiKendiProfil3ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Maaşınız : " + c1.getMaas() + "TL");
+    }//GEN-LAST:event_btnYoneticiKendiProfil3ActionPerformed
+
+    private void btnhesaplariIncele1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhesaplariIncele1ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel m = (DefaultTableModel) tblHesap.getModel();
+            m.setRowCount(0);
+            System.out.println(c1.hesapListele().size());
+            try {
+                ArrayList<Object[]> hesaplar2 = c1.hesapListele();
+                for (int i = 0; i < hesaplar2.size(); i++) {
+                    m.addRow(hesaplar2.get(i));
+                }
+            } catch (Exception e) {
+            }
+    }//GEN-LAST:event_btnhesaplariIncele1ActionPerformed
+
+    private void btnSfireGuncelle1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSfireGuncelle1ActionPerformed
+        // TODO add your handling code here:
+        this.cikisYap(this.c1);
+    }//GEN-LAST:event_btnSfireGuncelle1ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(mainCalisan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(mainCalisan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(mainCalisan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(mainCalisan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        
+        /* Create and display the form */
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnBasvuru;
+    private javax.swing.JLabel btnHesabim;
+    private javax.swing.JLabel btnKredi;
+    private javax.swing.JLabel btnOdemeler;
+    private javax.swing.JButton btnOnayKedi;
+    private javax.swing.JButton btnOnayKrediKarti;
+    private javax.swing.JButton btnOnayLimit;
+    private javax.swing.JButton btnOnayTransfer;
+    private javax.swing.JLabel btnProfil;
+    private javax.swing.JButton btnReddetKredi;
+    private javax.swing.JButton btnReddetKrediKarti;
+    private javax.swing.JButton btnReddetLimit;
+    private javax.swing.JButton btnReddetTransfer;
+    private javax.swing.JButton btnSfireGuncelle;
+    private javax.swing.JButton btnSfireGuncelle1;
+    private javax.swing.JButton btnSfireGuncelle2;
+    private javax.swing.JLabel btnTransfer;
+    private javax.swing.JButton btnYoneticiKendiProfil;
+    private javax.swing.JButton btnYoneticiKendiProfil1;
+    private javax.swing.JButton btnYoneticiKendiProfil2;
+    private javax.swing.JButton btnYoneticiKendiProfil3;
+    private javax.swing.JButton btnhesaplariIncele;
+    private javax.swing.JButton btnhesaplariIncele1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JPanel pnlIncele;
+    private javax.swing.JPanel pnlKredi;
+    private javax.swing.JPanel pnlKrediKarti;
+    private javax.swing.JPanel pnlLimit;
+    private javax.swing.JPanel pnlMenu;
+    private javax.swing.JPanel pnlProfil;
+    private javax.swing.JPanel pnlTransfer;
+    private javax.swing.JTable tblHesap;
+    private javax.swing.JTable tblKredi;
+    private javax.swing.JTable tblKrediKarti;
+    private javax.swing.JTable tblLimit;
+    private javax.swing.JTable tblTransfer;
+    private javax.swing.JLabel txtIsim;
+    // End of variables declaration//GEN-END:variables
+}

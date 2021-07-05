@@ -1,0 +1,122 @@
+101211202,10000.0TL limitli kredi kartı başvurunuz onaylanmıştır.
+302311219,101211202 ID' li müşteriye ait 10000.0TL limitli kredi kartı başvurusu onaylandı.
+101211202,TR53 0001 0001 6970 7296 4250 01 IBAN numaralı vadesiz TL hesabınıza 25000.0TL'lik Ticaret Kredisi (%15 Faiz) kredi başvurunuz onaylanmıştır.
+302311219,TR53 0001 0001 6970 7296 4250 01 IBAN numaralı vadesiz TL hesaba 25000.0TL'lik Ticaret Kredisi (%15 Faiz) kredi başvurusu onaylandı.
+101211202,TR53 0001 0001 6970 7296 4250 01 IBAN numaralı hesabınızdan 815.0TL para çekilmiştir.
+101211202,TR53 0001 0001 6970 7296 4250 01 IBAN numaralı hesabınıza 850.0TL para yatırılmıştır.
+101211202,TR53 0001 0001 6970 7296 4250 01 IBAN numaralı vadesiz TL hesabınıza 25000.0TL' lik Ticaret Kredisi (%15 Faiz) kredi başvurunuz alınmıştır.
+101211202,10000.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101211202,TR53 0001 0001 6970 7296 4250 01 IBAN numaralı vadesiz TL hesabınız oluşturuldu.
+101204542,TR53 0001 0001 6986 5739 2550 01 IBAN numaralı hesabınıza 5620.0TL para yatırılmıştır.
+101204542,TR53 0001 0001 6953 1965 9950 01 IBAN numaralı vadesiz TL hesabınız oluşturuldu.
+101204542,TR53 0001 0001 6986 5739 2550 01 IBAN numaralı vadesiz TL hesabınız oluşturuldu.
+101243494,Hesabınızın şifresi güncellendi.
+101243494,Hesabınızın şifresi güncellendi.
+101194534,65420.0TL limitli kredi kartı başvurunuz reddedilmiştir.
+302311219,101194534 ID' li müşteriye ait 65420.0TL limitli kredi kartı başvurusu reddedildi.
+101194534,4562.0TL limitli kredi kartı başvurunuz onaylanmıştır.
+302311219,101194534 ID' li müşteriye ait 4562.0TL limitli kredi kartı başvurusu onaylandı.
+101194534,TR53 0001 0001 6977 5526 7250 01 IBAN numaralı hesabınızdan TR53 0001 0001 6939 1045 4750 01 IBAN numaralı hesaba 2000.0TL para transferi başvurunuz onaylanmıştır.
+302311219,TR53 0001 0001 6977 5526 7250 01 IBAN numaralı hesaptan TR53 0001 0001 6939 1045 4750 01 IBAN numaralı hesaba 2000.0TL para transferi başvurusu onaylandı.
+101194534,TR53 0001 0001 6946 1547 9450 01 IBAN numaralı hesabınızdan transfer IBAN numaralı hesaba TR53 0001 0001 6939 1045 4750 01TL para transferi başvurunuz reddedilmiştir.
+302311219,TR53 0001 0001 6946 1547 9450 01 IBAN numaralı hesaptan transfer IBAN numaralı hesaba TR53 0001 0001 6939 1045 4750 01TL para transferi başvurusu reddedildi.
+101194534,TR53 0001 0001 6946 1547 9450 01 IBAN numaralı hesabınızdan TR53 0001 0001 6939 1045 4750 01 numaralı hesaba 2500.0TL para transferi başvurunuz alınmıştır.
+101194534,TR53 0001 0001 6977 5526 7250 01 IBAN numaralı hesabınızdan TR53 0001 0001 6939 1045 4750 01 numaralı hesaba 2000.0TL para transferi başvurunuz alınmıştır.
+101194534,TR53 0001 0001 6977 5526 7250 01 IBAN numaralı hesabınıza 8000.0TL para yatırılmıştır.
+101194534,TR53 0001 0001 6940 6404 9950 01 IBAN numaralı vadesiz TL hesabınız oluşturuldu.
+101194534,4513.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101194534,4562.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101194534,65420.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101194534,TR53 0001 0001 6952 7476 9950 01 IBAN numaralı vadesiz TL hesabınız oluşturuldu.
+101194534,TR53 0001 0001 6946 1547 9450 01 IBAN numaralı vadesiz TL hesabınız oluşturuldu.
+101194534,TR53 0001 0001 6977 5526 7250 01 IBAN numaralı vadesiz TL hesabınız oluşturuldu.
+202313111,Hesabınızın şifresi güncellendi.
+101201210,TR53 0001 0001 6917 9507 6650 01 IBAN numaralı vadesiz TL hesabınıza 3850.0TL'lik 3500.0 kredi başvurunuz reddedildi.
+202313111,TR53 0001 0001 6917 9507 6650 01 IBAN numaralı vadesiz TL hesaba 3850.0TL'lik 3500.0 kredi başvurusu reddedildi.
+101201210,TR53 0001 0001 6966 1235 8050 01 IBAN numaralı vadesiz TL hesabınıza 8000.0TL'lik Taşıt Kredisi (%10 Faiz) kredi başvurunuz onaylanmıştır.
+202313111,TR53 0001 0001 6966 1235 8050 01 IBAN numaralı vadesiz TL hesaba 8000.0TL'lik Taşıt Kredisi (%10 Faiz) kredi başvurusu onaylandı.
+101204542,7500.0TL limitli kredi kartı başvurunuz reddedilmiştir.
+202313111,101204542 ID' li müşteriye ait 7500.0TL limitli kredi kartı başvurusu reddedildi.
+101201210,15000.0TL limitli kredi kartı başvurunuz onaylanmıştır.
+202313111,101201210 ID' li müşteriye ait 15000.0TL limitli kredi kartı başvurusu onaylandı.
+101201210,1500.0TL limitli kredi kartı başvurunuz reddedilmiştir.
+202313111,101201210 ID' li müşteriye ait 1500.0TL limitli kredi kartı başvurusu reddedildi.
+101201210,TR53 0001 0001 6917 9507 6650 01 IBAN numaralı hesabınızdan TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesaba 2.0TL para transferi başvurunuz onaylanmıştır.
+202313111,TR53 0001 0001 6917 9507 6650 01 IBAN numaralı hesaptan TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesaba 2.0TL para transferi başvurusu onaylandı.
+101201210,TR53 0001 0001 6917 9507 6650 01 IBAN numaralı hesabınızdan transfer IBAN numaralı hesaba TR53 0001 0001 6996 5820 4350 01TL para transferi başvurunuz reddedilmiştir.
+202313111,TR53 0001 0001 6917 9507 6650 01 IBAN numaralı hesaptan transfer IBAN numaralı hesaba TR53 0001 0001 6996 5820 4350 01TL para transferi başvurusu reddedildi.
+101201210,TR53 0001 0001 6917 9507 6650 01 IBAN numaralı hesabınızdan TR53 0001 0001 6996 5820 4350 01 numaralı hesaba 123123.0TL para transferi başvurunuz alınmıştır.
+101201210,TR53 0001 0001 6917 9507 6650 01 IBAN numaralı hesabınızdan TR53 0001 0001 6996 5820 4350 01 numaralı hesaba 2.0TL para transferi başvurunuz alınmıştır.
+101201210,1500.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101201210,15000.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101201210,TR53 0001 0001 6966 1235 8050 01 IBAN numaralı vadesiz TL hesabınıza 8000.0TL' lik Taşıt Kredisi (%10 Faiz) kredi başvurunuz alınmıştır.
+101201210,TR53 0001 0001 6917 9507 6650 01 IBAN numaralı vadesiz TL hesabınıza 3500.0TL' lik Taşıt Kredisi (%10 Faiz) kredi başvurunuz alınmıştır.
+101204542,1234 5678 9123 4567 numaralı kredi kartınız için 15200.0TL limit başvurusu alınmıştır.
+101204542,1234 5678 9123 4567 numaralı kredi kartınız için 500000.0TL limit başvurusu onaylanmıştır.
+302311219,1234 5678 9123 4567 numaralı kredi kartı için 500000.0TL limit başvurusu onaylandı
+101204542,TR53 0001 0001 6981 3071 1450 01 IBAN numaralı hesabınızdan transfer IBAN numaralı hesaba TR53 0001 0001 6996 5820 4350 01TL para transferi başvurunuz reddedilmiştir.
+302311219,TR53 0001 0001 6981 3071 1450 01 IBAN numaralı hesaptan transfer IBAN numaralı hesaba TR53 0001 0001 6996 5820 4350 01TL para transferi başvurusu reddedildi.
+101204542,TR53 0001 0001 6981 3071 1450 01 IBAN numaralı hesabınızdan TR53 0001 0001 6996 5820 4350 01 numaralı hesaba 4.0TL para transferi başvurunuz alınmıştır.
+302311219,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesaptan TR53 0001 0001 6920 3187 4350 01 IBAN numaralı hesaba 5.0TL para transferi başvurusu onaylandı.
+101204542,7000.0TL limitli kredi kartı başvurunuz reddedilmiştir.
+302311219,101204542 ID' li müşteriye ait 7000.0TL limitli kredi kartı başvurusu reddedildi.
+101204542,1500.0TL limitli kredi kartı başvurunuz onaylanmıştır.
+302311219,101204542 ID' li müşteriye ait 1500.0TL limitli kredi kartı başvurusu onaylandı.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı vadesiz TL hesabınıza 6300.0TL'lik 6000.0 kredi başvurunuz reddedildi.
+302311219,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı vadesiz TL hesaba 6300.0TL'lik 6000.0 kredi başvurusu reddedildi.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı vadesiz TL hesabınıza 15000.0TL'lik Taşıt Kredisi (%10 Faiz) kredi başvurunuz onaylanmıştır.
+302311219,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı vadesiz TL hesaba 15000.0TL'lik Taşıt Kredisi (%10 Faiz) kredi başvurusu onaylandı.
+101204542,1234 5678 9123 4567 numaralı kredi kartınız için 500000.0TL limit başvurusu alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesabınızdan TR53 0001 0001 6920 3187 4350 01 numaralı hesaba 5.0TL para transferi başvurunuz alınmıştır.
+101204542,7500.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı vadesiz TL hesabınıza 6000.0TL' lik İhtiyaç Kredisi (%5 Faiz) kredi başvurunuz alınmıştır.
+101204542,8000.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı vadesiz TL hesabınıza 15000.0TL' lik Taşıt Kredisi (%10 Faiz) kredi başvurunuz alınmıştır.
+101204542,1234 5678 9333 4567 numaralı kredi kartınız için 8000.0TL limit başvurusu alınmıştır.
+101204542,1234 5678 9123 4567 numaralı kredi kartınız için 5000.0TL limit başvurusu alınmıştır.
+101204542,1234 5678 9123 4567 numaralı kredi kartınızdan 500.0TL para harcanmıştır.
+101204542,7000.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı vadesiz TL hesabınıza 8020.0TL' lik Taşıt Kredisi (%10 Faiz) kredi başvurunuz alınmıştır.
+101204542,1234 5678 9123 4567 numaralı kredi kartınız için 9000.0TL limit başvurusu alınmıştır.
+101204542,TR53 0001 0001 6927 7618 6750 01 IBAN numaralı hesabınızdan TR53 0001 0001 6980 9509 5950 01 numaralı hesaba para transferi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesabınızdan TR53 0001 0001 6979 4566 1750 01 numaralı hesaba para transferi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6980 9509 5950 01 IBAN numaralı hesabınızdan TR53 0001 0001 6986 3989 2050 01 numaralı hesaba para transferi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesabınızdan TR53 0001 0001 6927 8553 2650 01 numaralı hesaba para transferi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesabınızdan TR53 0001 0001 6981 3071 1450 01 numaralı hesaba para transferi başvurunuz alınmıştır.
+101204542,krasdasdsad kredi borcunuzun 659.0TL'lik kısım borcu ödenmiştir.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesabınızdan 553183.0TL para çekilmiştir.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesabınızdan 553842.0TL para çekilmiştir.
+101204542,7914 4796 1113 9084 numaralı kredi kartınızın 9000.0TL borç ödenmiştir.
+101204542,7914 4796 1113 9084 numaralı kredi kartınızdan 9000.0TL para harcanmıştır.
+101204542,2300.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101204542,1500.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101204542,10000.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6927 7618 6750 01 IBAN numaralı vadesiz TL hesabınıza 16000.0TL' lik Ticaret Kredisi (%15 Faiz) kredi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6939 1045 4750 01 IBAN numaralı vadesiz TL hesabınıza 150000.0TL' lik Taşıt Kredisi (%10 Faiz) kredi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6980 9509 5950 01 IBAN numaralı vadesiz TL hesabınıza 10000.0TL' lik Konut Kredisi (%7 Faiz) kredi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı vadesiz TL hesabınıza 5000.0TL' lik İhtiyaç Kredisi (%5 Faiz) kredi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6980 9509 5950 01 IBAN numaralı vadesiz TL hesabınıza 1000.0TL' lik İhtiyaç Kredisi (%5 Faiz) kredi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6979 4566 1750 01 IBAN numaralı vadesiz TL hesabınıza 50000.0TL' lik Konut Kredisi (%7 Faiz) kredi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6980 9509 5950 01 IBAN numaralı vadesiz TL hesabınıza 3333.0TL' lik Ticarek Kredisi (%15 Faiz) kredi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6939 1045 4750 01 IBAN numaralı vadesiz TL hesabınıza 12321.0TL' lik Konut Kredisi (%7 Faiz) kredi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı vadesiz TL hesabınıza 6000.0TL' lik İhtiyaç Kredisi (%5 Faiz) kredi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı vadesiz TL hesabınıza 5000.0TL' lik İhtiyaç Kredisi (%5 Faiz) kredi başvurunuz alınmıştır.
+101204542,6000.0TL limitli Kredi kartı başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı vadesiz TL hesabınıza 65024.0TL' lik İhtiyaç Kredisi (%5 Faiz) kredi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı vadesiz TL hesabınıza 5000TL' lik İhtiyaç Kredisi (%5 Faiz) kredi başvurunuz alınmıştır.
+101204542,Hesabınızın şifresi güncellendi.
+101204542,Hesabınızın şifresi güncellendi.
+101204542,TR53 0001 0001 6996 5820 4350 01IBAN numaralı hesabınızdan asdasdasd numaralı hesaba para transferi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesabınızdan 7650.0TL para çekilmiştir.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesabınızdan 8450.0TL para çekilmiştir.
+101204542,1234 5678 9123 4567 numaralı kredi kartınızın 50.0TL borç ödenmiştir.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesabınızdan 8500.0TL para çekilmiştir.
+101204542,1234 5678 9123 4567 numaralı kredi kartınızın 750.0TL borç ödenmiştir.
+101204542,TR53 0001 0001 6979 4566 1750 01 IBAN numaralı hesabınızdan 9150.0TL para çekilmiştir.
+101204542,TR53 0001 0001 6979 4566 1750 01 IBAN numaralı hesabınıza 9500.0TL para yatırılmıştır.
+101204542,TR53 0001 0001 6996 5820 4350 01 IBAN numaralı hesabınıza 9250.0TL para yatırılmıştır.
+101204542,TR53 0001 0001 6939 1045 4750 01 IBAN numaralı vadesiz TL hesabınıza 900TL' lik İhtiyaç Kredisi (%5 Faiz) kredi başvurunuz alınmıştır.
+101204542,TR53 0001 0001 6981 3071 1450 01 IBAN numaralı vadesiz TL hesabınız başarıyla oluşturuldu.
+101204542,TR53 0001 0001 6927 8553 2650 01 IBAN numaralı vadesiz TL hesabınız başarıyla oluşturuldu.
+101204542,TR53 0001 0001 6927 7618 6750 01 IBAN numaralı vadesiz TL hesabınız başarıyla oluşturuldu.
+101204542,Hesabınıza 500TL para girişi yapıldı.

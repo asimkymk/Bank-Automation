@@ -1,0 +1,13 @@
+101204542,kanarya10,Kullanıcı
+202191210,Kanarya10,Personel
+101201210,KANARYA1907,Kullanıcı
+202354542,asimasim,Personel
+302311219,kanarya15,Yönetici
+101194534,haticehatice,Kullanıcı
+101243494,feyzafeyza,Kullanıcı
+101234546,1234,Müşteri
+101121221,1234,Kullanıcı
+202201210,kanarya10,Personel
+101204534,kanarya10,Kullanıcı
+202204542,kanarya10,Personel
+101211202,kanarya10,Kullanıcı
